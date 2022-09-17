@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 const Create = () => {
     const [title, setTitle] = useState('');
@@ -16,12 +18,14 @@ const Create = () => {
             <h2>Add a new blog</h2>
             <form onSubmit={handleSubmit}>
                 <label>Blog title:</label>
-                <input 
+                {/* <input 
                 type="text"
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                />
+                /> */}
+                <TextField id="standard-basic" label="Standard" variant="outlined" value={title}
+                onChange={(e) => setTitle(e.target.value)} />
                 <label>Blog body:</label>
                 <textarea
                 required
@@ -35,7 +39,7 @@ const Create = () => {
                     <option value="Jane">Jane</option>
                     <option value="Tris">Tris</option>
                 </select>
-                <button>Add Blog</button>
+                <Button variant="contained">Add Blog</Button>
                 <p>{ title}</p>
                 <p>{ body}</p>
                 <p>{ author}</p>
